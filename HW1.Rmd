@@ -1,9 +1,10 @@
 ---
 title: "HW(1)"
-author: "John Doe" # your name
+author: "Alex Hege" # your name
 date: "1/31/2022" # today
 output: pdf_document
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, error = TRUE, eval = TRUE)
@@ -22,52 +23,59 @@ Q1. Replace the author name with your name in YAML part above.
 
 Q2. Store five values `82.0, 31.2, 98.2, 19.4, 72.6` into the `scores` variable.
 ```{r}
-#remove this comment and answer here
+scores <- c(82.0, 31.2, 98.2, 19.4, 72.6)
 ```
 
 Q3. Write a code that finds the minimun value of `scores` that you have created in Q2.
 ```{r}
-#remove this comment and answer here
+min(scores)
 ```
 
 Q4. Assign the value of 4 raised to 2 to a variable `generation`. Then, print out the value of `generation`.
 ```{r}
-#remove this comment and answer here
+generation <- 4^2
+generation
 ```
 
 Q5. Assign the value of square root 81 to a variable `nine`, and print out `nine`.
 ```{r}
-#remove this comment and answer here
+nine <- sqrt(81)
+nine
 ```
 
 Q6. Store a text `mozart` into the variable `piano`.
 ```{r}
-#remove this comment and answer here
+pinao <- "mozart"
 ```
 
 Q7. What are three components for a single plot of `ggplot2` package? 
 ```{r}
-#remove this comment and answer here
+#ggplot(data,mapping,geom)
+#three components are: data, mapping, geom
+
 ```
 
 Q8. A line of code that shows `presidential` data as a table
 ```{r}
-#remove this comment and answer here
+#view(presidential)
 ```
 
 Q9. Create a matrix with 4 rows that contain the numbers 1 up to 12
 ```{r}
-#remove this comment and answer here
+data1 = c(1,2,3,4,5,6,7,8,9,10,11,12)
+matrix(data1, 4, 3)
 ```
 
 Q10. A line of code that assigns `displ` column as `x-axis` and `hwy` column as `y-axis` of `mpg` data to a variable `mpg_plot` using `ggplot2` package
 ```{r}
-#remove this comment and answer here
+mpg_plot <- ggplot(data=mpg, aes(x=displ, y=hwy))
+mpg_plot
 ```
 
 Q11. Two lines of code that create a scatter plot of a variable `mpg_plot` that you have made in Q10 
 ```{r}
-#remove this comment and answer here
+mpg_plot + 
+  geom_point()
 ```
 
 Q12. Three lines of code that create subplots (four rows) by `class` column, using two lines of code for Q10.
