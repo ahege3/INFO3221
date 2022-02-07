@@ -57,7 +57,7 @@ Q7. What are three components for a single plot of `ggplot2` package?
 
 Q8. A line of code that shows `presidential` data as a table
 ```{r}
-#view(presidential)
+View(presidential)
 ```
 
 Q9. Create a matrix with 4 rows that contain the numbers 1 up to 12
@@ -80,48 +80,65 @@ mpg_plot +
 
 Q12. Three lines of code that create subplots (four rows) by `class` column, using two lines of code for Q10.
 ```{r}
-#remove this comment and answer here 
+mpg_plot +
+  geom_col()
 ```
 
 Q13. A line of code that returns dimension information of `presidential` data
 ```{r}
-#remove this comment and answer here
+dim(presidential)
 ```
 
 Q14. What are the unique values of `party` column of `presidential` data?
 ```{r}
-#remove this comment and answer here
+unique(presidential$party)
 ```
 
 Q15. Two lines of code that will directly create a simple stacked bar plot that shows the count by `class` column of `mpg` data with filling color by `trans` column
 
 ```{r}
-#remove this comment and answer here
+bardata <- table(mpg$class, mpg$trans)
+barplot(bardata, col=c("red","orange","yellow","green","blue","purple","hotpink"))
+
 ```
 
 Q16. A line of code that assigns `state` column as `x` position of `midwest` data to a variable `midwest_plot` using `ggplot2` package
 ```{r} 
-#remove this comment and answer here
+midwest_plot <- ggplot(midwest, aes(state))
+midwest_plot
 ```
 
 Q17. Five lines of code that will return a bar plot of the `midwest_plot` variable with a title `Plot of count by state`. X-axis is labeled as `state` and y-axis as `count`. 
 ```{r}
-#remove this comment and answer here
+midwest_plot +
+  geom_bar()
+  xlab("state")
+  ylab("count")
+  ggtitle("Plot of count by state")
+  
 ```
 
 Q18. What is the name of 7th column of `diamonds` dataset?
 ```{r}
-#remove this comment and answer here
+diamonds[, c(7)]
 ```
 
 Q19. How many columns and rows does `midwest` data have?
 ```{r}
-#remove this comment and answer here
+nrow(midwest)
+ncol(midwest)
+dim(midwest)
+#midwest data has 437 rows and 28 columns
+
 ```
 
 Q20. Two different commands for a quick overview of `mpg` data that we have learned in our class
 ```{r}
-#remove this comment and answer here
+View(mpg)
+summary(mpg)
+dim(mpg)
+colnames(mpg)
+unique(mpg)
 ```
 
 ### *End of document*

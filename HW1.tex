@@ -1,0 +1,511 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\title{HW(1)}
+\author{Alex Hege}
+\date{1/31/2022}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={HW(1)},
+  pdfauthor={Alex Hege},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+\maketitle
+
+\#Run this code first
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{if-you-dont-know-the-answer-leave-it-blank.-if-you-are-caught-cheating-you-will-be-given-minus-50-points.}{%
+\subsubsection{If you don't know the answer, leave it blank. If you are
+caught cheating, you will be given minus 50
+points.}\label{if-you-dont-know-the-answer-leave-it-blank.-if-you-are-caught-cheating-you-will-be-given-minus-50-points.}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Q1. Replace the author name with your name in YAML part above.
+
+Q2. Store five values \texttt{82.0,\ 31.2,\ 98.2,\ 19.4,\ 72.6} into the
+\texttt{scores} variable.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{scores }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{82.0}\NormalTok{, }\FloatTok{31.2}\NormalTok{, }\FloatTok{98.2}\NormalTok{, }\FloatTok{19.4}\NormalTok{, }\FloatTok{72.6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Q3. Write a code that finds the minimun value of \texttt{scores} that
+you have created in Q2.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{min}\NormalTok{(scores)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 19.4
+\end{verbatim}
+
+Q4. Assign the value of 4 raised to 2 to a variable \texttt{generation}.
+Then, print out the value of \texttt{generation}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{generation }\OtherTok{\textless{}{-}} \DecValTok{4}\SpecialCharTok{\^{}}\DecValTok{2}
+\NormalTok{generation}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 16
+\end{verbatim}
+
+Q5. Assign the value of square root 81 to a variable \texttt{nine}, and
+print out \texttt{nine}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nine }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(}\DecValTok{81}\NormalTok{)}
+\NormalTok{nine}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9
+\end{verbatim}
+
+Q6. Store a text \texttt{mozart} into the variable \texttt{piano}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pinao }\OtherTok{\textless{}{-}} \StringTok{"mozart"}
+\end{Highlighting}
+\end{Shaded}
+
+Q7. What are three components for a single plot of \texttt{ggplot2}
+package?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#ggplot(data,mapping,geom)}
+\CommentTok{\#three components are: data, mapping, geom}
+\end{Highlighting}
+\end{Shaded}
+
+Q8. A line of code that shows \texttt{presidential} data as a table
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{View}\NormalTok{(presidential)}
+\end{Highlighting}
+\end{Shaded}
+
+Q9. Create a matrix with 4 rows that contain the numbers 1 up to 12
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data1 }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{12}\NormalTok{)}
+\FunctionTok{matrix}\NormalTok{(data1, }\DecValTok{4}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    5    9
+## [2,]    2    6   10
+## [3,]    3    7   11
+## [4,]    4    8   12
+\end{verbatim}
+
+Q10. A line of code that assigns \texttt{displ} column as
+\texttt{x-axis} and \texttt{hwy} column as \texttt{y-axis} of
+\texttt{mpg} data to a variable \texttt{mpg\_plot} using
+\texttt{ggplot2} package
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mpg\_plot }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{mpg, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{displ, }\AttributeTok{y=}\NormalTok{hwy))}
+\NormalTok{mpg\_plot}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{HW1_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+Q11. Two lines of code that create a scatter plot of a variable
+\texttt{mpg\_plot} that you have made in Q10
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mpg\_plot }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{HW1_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+Q12. Three lines of code that create subplots (four rows) by
+\texttt{class} column, using two lines of code for Q10.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mpg\_plot }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{HW1_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+Q13. A line of code that returns dimension information of
+\texttt{presidential} data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(presidential)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 11  4
+\end{verbatim}
+
+Q14. What are the unique values of \texttt{party} column of
+\texttt{presidential} data?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{unique}\NormalTok{(presidential}\SpecialCharTok{$}\NormalTok{party)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Republican" "Democratic"
+\end{verbatim}
+
+Q15. Two lines of code that will directly create a simple stacked bar
+plot that shows the count by \texttt{class} column of \texttt{mpg} data
+with filling color by \texttt{trans} column
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bardata }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(mpg}\SpecialCharTok{$}\NormalTok{class, mpg}\SpecialCharTok{$}\NormalTok{trans)}
+\FunctionTok{barplot}\NormalTok{(bardata, }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{,}\StringTok{"orange"}\NormalTok{,}\StringTok{"yellow"}\NormalTok{,}\StringTok{"green"}\NormalTok{,}\StringTok{"blue"}\NormalTok{,}\StringTok{"purple"}\NormalTok{,}\StringTok{"hotpink"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{HW1_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+Q16. A line of code that assigns \texttt{state} column as \texttt{x}
+position of \texttt{midwest} data to a variable \texttt{midwest\_plot}
+using \texttt{ggplot2} package
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{midwest\_plot }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(midwest, }\FunctionTok{aes}\NormalTok{(state))}
+\NormalTok{midwest\_plot}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{HW1_files/figure-latex/unnamed-chunk-16-1.pdf}
+
+Q17. Five lines of code that will return a bar plot of the
+\texttt{midwest\_plot} variable with a title
+\texttt{Plot\ of\ count\ by\ state}. X-axis is labeled as \texttt{state}
+and y-axis as \texttt{count}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{midwest\_plot }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{HW1_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"state"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $x
+## [1] "state"
+## 
+## attr(,"class")
+## [1] "labels"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"count"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $y
+## [1] "count"
+## 
+## attr(,"class")
+## [1] "labels"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Plot of count by state"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $title
+## [1] "Plot of count by state"
+## 
+## attr(,"class")
+## [1] "labels"
+\end{verbatim}
+
+Q18. What is the name of 7th column of \texttt{diamonds} dataset?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{diamonds[, }\FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 53,940 x 1
+##    price
+##    <int>
+##  1   326
+##  2   326
+##  3   327
+##  4   334
+##  5   335
+##  6   336
+##  7   336
+##  8   337
+##  9   337
+## 10   338
+## # ... with 53,930 more rows
+\end{verbatim}
+
+Q19. How many columns and rows does \texttt{midwest} data have?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(midwest)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 437
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ncol}\NormalTok{(midwest)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 28
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(midwest)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 437  28
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#midwest data has 437 rows and 28 columns}
+\end{Highlighting}
+\end{Shaded}
+
+Q20. Two different commands for a quick overview of \texttt{mpg} data
+that we have learned in our class
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{View}\NormalTok{(mpg)}
+\FunctionTok{summary}\NormalTok{(mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  manufacturer          model               displ            year     
+##  Length:234         Length:234         Min.   :1.600   Min.   :1999  
+##  Class :character   Class :character   1st Qu.:2.400   1st Qu.:1999  
+##  Mode  :character   Mode  :character   Median :3.300   Median :2004  
+##                                        Mean   :3.472   Mean   :2004  
+##                                        3rd Qu.:4.600   3rd Qu.:2008  
+##                                        Max.   :7.000   Max.   :2008  
+##       cyl           trans               drv                 cty       
+##  Min.   :4.000   Length:234         Length:234         Min.   : 9.00  
+##  1st Qu.:4.000   Class :character   Class :character   1st Qu.:14.00  
+##  Median :6.000   Mode  :character   Mode  :character   Median :17.00  
+##  Mean   :5.889                                         Mean   :16.86  
+##  3rd Qu.:8.000                                         3rd Qu.:19.00  
+##  Max.   :8.000                                         Max.   :35.00  
+##       hwy             fl               class          
+##  Min.   :12.00   Length:234         Length:234        
+##  1st Qu.:18.00   Class :character   Class :character  
+##  Median :24.00   Mode  :character   Mode  :character  
+##  Mean   :23.44                                        
+##  3rd Qu.:27.00                                        
+##  Max.   :44.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 234  11
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{colnames}\NormalTok{(mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "manufacturer" "model"        "displ"        "year"         "cyl"         
+##  [6] "trans"        "drv"          "cty"          "hwy"          "fl"          
+## [11] "class"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{unique}\NormalTok{(mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 225 x 11
+##    manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class
+##    <chr>        <chr>      <dbl> <int> <int> <chr> <chr> <int> <int> <chr> <chr>
+##  1 audi         a4           1.8  1999     4 auto~ f        18    29 p     comp~
+##  2 audi         a4           1.8  1999     4 manu~ f        21    29 p     comp~
+##  3 audi         a4           2    2008     4 manu~ f        20    31 p     comp~
+##  4 audi         a4           2    2008     4 auto~ f        21    30 p     comp~
+##  5 audi         a4           2.8  1999     6 auto~ f        16    26 p     comp~
+##  6 audi         a4           2.8  1999     6 manu~ f        18    26 p     comp~
+##  7 audi         a4           3.1  2008     6 auto~ f        18    27 p     comp~
+##  8 audi         a4 quattro   1.8  1999     4 manu~ 4        18    26 p     comp~
+##  9 audi         a4 quattro   1.8  1999     4 auto~ 4        16    25 p     comp~
+## 10 audi         a4 quattro   2    2008     4 manu~ 4        20    28 p     comp~
+## # ... with 215 more rows
+\end{verbatim}
+
+\hypertarget{end-of-document}{%
+\subsubsection{\texorpdfstring{\emph{End of
+document}}{End of document}}\label{end-of-document}}
+
+\end{document}
