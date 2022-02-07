@@ -1,8 +1,10 @@
 ---
 title: "HW(1)"
-author: "Alex Hege" # your name
-date: "1/31/2022" # today
-output: pdf_document
+author: "Alex Hege"
+date: "1/31/2022"
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 
@@ -81,7 +83,8 @@ mpg_plot +
 Q12. Three lines of code that create subplots (four rows) by `class` column, using two lines of code for Q10.
 ```{r}
 mpg_plot +
-  geom_col()
+  geom_point()+
+  facet_wrap(~class, nrow=4)
 ```
 
 Q13. A line of code that returns dimension information of `presidential` data

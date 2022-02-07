@@ -1,0 +1,88 @@
+---
+title: "HW(1) Project"
+author: "John Doe"
+date: "1/31/2022"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+install.packages('knitr')
+knitr::opts_chunk$set(echo = TRUE, error = TRUE, eval = TRUE)
+```
+
+# Run this code first
+```{r, include=FALSE}
+if (!require('ggplot2')) install.packages('ggplot2'); library('ggplot2') 
+```
+
+
+# Q1. Replace the author name with your name in YAML part above. 
+
+# Q2. Find `Position Adjustments` section from the cheat sheet and apply one of its methods with your comment
+ 
+```{r}
+q2 <- ggplot(mpg, aes(fl, fill = drv)) # creating my variable `q2` # Do not modify this line
+```
+
+```{r, out.width='50%'}
+q2 +
+  geom_bar(position = "stack") # Creates a bar chart where the position of the bars on the chart are stacked on top of each other.
+```
+```{r, out.width='50%'}
+q2 +
+  geom_bar(position = "dodge") # Creates a bar chart where the position of the bars on the chart are positioned next to each other in groups. For this dataset in q2 I believe this plot visualization to be the most descriptive.
+```
+```{r, out.width='50%'}
+q2 +
+  geom_bar(position = "Fill") # Similar to the stack position adjustment, but additionally normalizes the height of each bar. Creates a bar chart where the position of the bars on the chart are positioned on top of each other completely filling the y-axis.
+```
+
+# Q3. Find `ONE VARIABLE continuous` section and apply one of its methods with your comment 
+```{r}
+q3 <- ggplot(mpg, aes(hwy)) # creating my variable `q3` # Do not modify this line
+```
+
+```{r, out.width='50%'}
+q3 + 
+  geom_area(stat = "bin")
+```
+```{r, out.width='50%'}
+q3 + 
+  geom_density() # Creates a continuous line graph of the density, note how the overall shape appears similar to the geom_area plot but less descriptive due to its smoothed curves
+```
+```{r, out.width='50%'}
+q3 + 
+  geom_histogram(bandwidth = 30) # Creates a histogram plot, separated into 30 buckets which are plotted along the x-axis, note how the shape is similar to the geom_area plot. I believe this plot to be the most descriptive as it shows the bucketed count at each speed.
+```
+
+# Q4. Find `COLOR AND FILL SCALES (CONTINUOUS)` section and apply one of its methods with your comment 
+```{r}
+q4 <- q3 + geom_dotplot(aes(fill = ..x..)) # Creating my variable `q4` # Do not modify this line
+```
+
+```{r, out.width='50%'}
+q4 +
+  scale_fill_gradient(low="green", high="red") # This color scale fills in visualization with a gradient ranging between green on the lower end to red on the upper end. I believe this to be a descriptive addition if the data is representing speeding, but the data is representing MPG so it is not a good choice.
+```
+```{r, out.width='50%'}
+q4 +
+  scale_fill_gradient2(low="red", high="green", mid="green", midpoint=30) # This color scale fills in visualization with a gradient ranging between red on the lower end to green on the upper end. The data is representing MPG so the upper end is chosen to be green as higher MPG is better. All MPG above 30 were given the brightest green since not only the outliers at 40 MPG are good MPG's.
+```
+
+# Q5. Find `both discrete` section and apply one of its methods with your comment 
+```{r}
+q5 <- ggplot(mpg, aes(cyl, hwy)) # Creating my variable `q5` # Do not modify this line
+```
+
+```{r, out.width='50%'}
+q5 +
+  geom_count() # This plot appears to have the x-axis bucketed similar to a histogram, three clustered groups can clearly been seen 
+```
+```{r, out.width='50%'}
+q5 +
+  geom_jitter() # Three clusters can clearly be seen in the plot. Although the groups are not stacked like geom_count(), they are still noticable to make out. I believe this plot to be the most descriptive as it prevents gross oversimplications if the wrong number of buckets are selected in geom_count()
+```
+
+### *End of document*
